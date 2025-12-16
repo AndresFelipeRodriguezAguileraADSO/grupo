@@ -25,7 +25,7 @@ def factorial(n):
             fact *= i
         return fact
 
-# Estudiante 4: Número Primo (¡NUEVO!)
+# Estudiante 4: Número Primo
 def es_primo(n):
     if n <= 1:
         return False
@@ -33,6 +33,20 @@ def es_primo(n):
         if n % i == 0:
             return False
     return True
+
+# Estudiante 5: Números Perfectos (¡NUEVO!)
+def numeros_perfectos(n):
+    perfectos = []
+    num = 1
+    while len(perfectos) < n:
+        suma_divisores = 0
+        for i in range(1, num):
+            if num % i == 0:
+                suma_divisores += i
+        if suma_divisores == num:
+            perfectos.append(num)
+        num += 1
+    return perfectos
 
 # --- ZONA DEL MENÚ ---
 
@@ -62,7 +76,6 @@ def menu():
                 print("Error: Ingrese un número entero.")
 
         elif opcion == '3':
-            # LOGICA DE NUMEROS PRIMOS
             try:
                 n = int(input("Ingrese un número para verificar si es primo: "))
                 if es_primo(n):
@@ -73,9 +86,13 @@ def menu():
                 print("Error: Ingrese un número entero.")
 
         elif opcion == '4':
-            # Espacio reservado para Estudiante 5
-            print("Funcionalidad Perfectos en construcción...")
-            pass
+            # LOGICA NUMEROS PERFECTOS
+            try:
+                n = int(input("¿Cuántos números perfectos desea hallar?: "))
+                print("Calculando... (esto puede tardar un poco si pides muchos)")
+                print(f"Los primeros {n} números perfectos son: {numeros_perfectos(n)}")
+            except ValueError:
+                print("Error: Ingrese un número entero.")
 
         elif opcion == '5':
             print("Saliendo del programa...")
