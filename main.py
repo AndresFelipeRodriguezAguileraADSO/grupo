@@ -1,8 +1,23 @@
 import os
 
+# --- ZONA DE FUNCIONES ---
+
+# Estudiante 2: Fibonacci (¡YA IMPLEMENTADO!)
+def fibonacci(n):
+    fib_sequence = [0, 1]
+    if n <= 0:
+        return []
+    elif n == 1:
+        return [0]
+    while len(fib_sequence) < n:
+        fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
+    return fib_sequence
+
+# --- ZONA DEL MENÚ ---
+
 def menu():
     while True:
-        print("\n--- MENÚ PRINCIPAL V1 ---")
+        print("\n--- MENÚ PRINCIPAL (V1.0) ---")
         print("1. Serie de Fibonacci (Estudiante 2)")
         print("2. Calcular Factorial (Estudiante 3)")
         print("3. Verificar si es Primo (Estudiante 4)")
@@ -12,21 +27,28 @@ def menu():
         opcion = input("Seleccione una opción: ")
         
         if opcion == '1':
-            print("Funcionalidad Fibonacci en construcción...")
-            # Aquí el Estudiante 2 pondrá su código
-            pass 
+            # LOGICA DE FIBONACCI
+            try:
+                n = int(input("¿Cuántos números de Fibonacci desea?: "))
+                print(f"Serie: {fibonacci(n)}")
+            except ValueError:
+                print("Error: Ingrese un número válido.")
+
         elif opcion == '2':
+            # Espacio reservado para Estudiante 3
             print("Funcionalidad Factorial en construcción...")
-            # Aquí el Estudiante 3 pondrá su código
             pass
+
         elif opcion == '3':
+            # Espacio reservado para Estudiante 4
             print("Funcionalidad Primos en construcción...")
-            # Aquí el Estudiante 4 pondrá su código
             pass
+
         elif opcion == '4':
+            # Espacio reservado para Estudiante 5
             print("Funcionalidad Perfectos en construcción...")
-            # Aquí el Estudiante 5 pondrá su código
             pass
+
         elif opcion == '5':
             print("Saliendo del programa...")
             break
