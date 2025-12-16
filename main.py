@@ -2,7 +2,7 @@ import os
 
 def menu():
     while True:
-        print("\n--- MENÚ PRINCIPAL ---")
+        print("\n--- MENÚ PRINCIPAL V1 ---")
         print("1. Serie de Fibonacci (Estudiante 2)")
         print("2. Calcular Factorial (Estudiante 3)")
         print("3. Verificar si es Primo (Estudiante 4)")
