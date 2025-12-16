@@ -2,7 +2,7 @@ import os
 
 # --- ZONA DE FUNCIONES ---
 
-# Estudiante 2: Fibonacci (¡YA IMPLEMENTADO!)
+# Estudiante 2: Fibonacci
 def fibonacci(n):
     fib_sequence = [0, 1]
     if n <= 0:
@@ -12,6 +12,18 @@ def fibonacci(n):
     while len(fib_sequence) < n:
         fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
     return fib_sequence
+
+# Estudiante 3: Factorial (¡NUEVO!)
+def factorial(n):
+    if n < 0:
+        return "No existe factorial de negativos"
+    elif n == 0 or n == 1:
+        return 1
+    else:
+        fact = 1
+        for i in range(1, n + 1):
+            fact *= i
+        return fact
 
 # --- ZONA DEL MENÚ ---
 
@@ -27,7 +39,6 @@ def menu():
         opcion = input("Seleccione una opción: ")
         
         if opcion == '1':
-            # LOGICA DE FIBONACCI
             try:
                 n = int(input("¿Cuántos números de Fibonacci desea?: "))
                 print(f"Serie: {fibonacci(n)}")
@@ -35,9 +46,12 @@ def menu():
                 print("Error: Ingrese un número válido.")
 
         elif opcion == '2':
-            # Espacio reservado para Estudiante 3
-            print("Funcionalidad Factorial en construcción...")
-            pass
+            # LOGICA DE FACTORIAL
+            try:
+                n = int(input("Ingrese un número para calcular el factorial: "))
+                print(f"El factorial es: {factorial(n)}")
+            except ValueError:
+                print("Error: Ingrese un número entero.")
 
         elif opcion == '3':
             # Espacio reservado para Estudiante 4
