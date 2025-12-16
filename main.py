@@ -13,7 +13,7 @@ def fibonacci(n):
         fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
     return fib_sequence
 
-# Estudiante 3: Factorial (¡NUEVO!)
+# Estudiante 3: Factorial
 def factorial(n):
     if n < 0:
         return "No existe factorial de negativos"
@@ -24,6 +24,15 @@ def factorial(n):
         for i in range(1, n + 1):
             fact *= i
         return fact
+
+# Estudiante 4: Número Primo (¡NUEVO!)
+def es_primo(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
 
 # --- ZONA DEL MENÚ ---
 
@@ -46,7 +55,6 @@ def menu():
                 print("Error: Ingrese un número válido.")
 
         elif opcion == '2':
-            # LOGICA DE FACTORIAL
             try:
                 n = int(input("Ingrese un número para calcular el factorial: "))
                 print(f"El factorial es: {factorial(n)}")
@@ -54,9 +62,15 @@ def menu():
                 print("Error: Ingrese un número entero.")
 
         elif opcion == '3':
-            # Espacio reservado para Estudiante 4
-            print("Funcionalidad Primos en construcción...")
-            pass
+            # LOGICA DE NUMEROS PRIMOS
+            try:
+                n = int(input("Ingrese un número para verificar si es primo: "))
+                if es_primo(n):
+                    print(f"El número {n} ES Primo.")
+                else:
+                    print(f"El número {n} NO es Primo.")
+            except ValueError:
+                print("Error: Ingrese un número entero.")
 
         elif opcion == '4':
             # Espacio reservado para Estudiante 5
